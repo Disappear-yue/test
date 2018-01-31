@@ -1,0 +1,64 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+        <title>1</title>
+        <link rel="stylesheet" type="text/css" href="zoomer.css" media="screen" />
+        <style type="text/css">
+            body {
+                font: Arial, Helvetica, sans-serif normal 10px;
+                margin: 0;
+                padding: 0;
+            }
+            * {
+                margin: 0;
+                padding: 0;
+            }
+            #page {
+                margin: 0 auto;
+                margin-top: 50px;
+                position: relative;
+                width: 850px;
+                font-family: verdana;
+                font-size: 12px;
+                opacity: 0.7;
+            }
+            #content {
+                width: 100%;
+            }
+        </style>
+    </head>
+    <body>
+        <div id="page">
+            <div id="content">
+                <div class="container">
+                    <img id="logo" src="logo.jpg"></img>
+                    <ul class="thumb"></ul>
+                    <img src="footer.jpg"></img>
+                </div>
+            </div>
+        </div>
+        <canvas id="canvas_nest" style="position: fixed; top: 0px; left: 0px; z-index: -1; opacity: 0.5;" width="1600" height="508"></canvas>
+            <script type="text/javascript" src="canvas-nest.js"></script> 
+            <script type="text/javascript" src="jquery-2.2.4.js"></script>
+            <script type="text/javascript" src="zoomer.js"></script>
+            <script type="text/javascript">
+                var str='';
+                for (var i = 1; i <= 18; i++) {
+                	str=' <li><a href="#"><img src="'+i+'.jpg" alt="Robots like cameras" /></a></li>'
+                	$('.thumb').append(str);
+                }
+            	
+                $(document).ready(function () {
+                    $('ul.thumb li').Zoomer({
+                        speedView: 200,
+                        speedRemove: 400,
+                        altAnim: true,
+                        speedTitle: 400,
+                        debug: false
+                    });
+                });
+            </script>
+
+    </body>
+</html>
